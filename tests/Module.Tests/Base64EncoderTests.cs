@@ -1,3 +1,4 @@
+using System;
 using NUnit.Framework;
 using Lab.Interfaces;
 using Lab.Implementations.GenCode3; // Тестируем GigaChat
