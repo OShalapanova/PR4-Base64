@@ -1,3 +1,4 @@
+using System;
 using NUnit.Framework;
 using Lab.Interfaces;
 using Lab.Implementations.GenCode2; // Тестируем Deepseek
