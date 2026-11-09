@@ -1,0 +1,18 @@
+name: .NET CI Pipeline
+
+on:
+  push:
+    branches: [ "main", "ai-version-1", "ai-version-2", "ai-version-3" ]
+  workflow_dispatch: 
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      - run: dotnet restore
+      - run: dotnet build --no-restore
+      - run: dotnet test --no-build --verbosity normal
