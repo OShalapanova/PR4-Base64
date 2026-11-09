@@ -13,6 +13,6 @@ jobs:
       - uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '8.0.x'
-      - run: dotnet restore
-      - run: dotnet build --no-restore
-      - run: dotnet test --no-build --verbosity normal
+      - run: dotnet restore tests/Module.Tests/Module.Tests.csproj
+      - run: dotnet build tests/Module.Tests/Module.Tests.csproj --no-restore
+      - run: dotnet test tests/Module.Tests/Module.Tests.csproj --no-build --verbosity normal
